@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { API_URL } from "../constants";
 
 export default function Search() {
   const { string } = useParams();
   const [movies, setMovie] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/search/${string}`)
+    fetch(`${API_URL}/search/${string}`)
       .then((response) => response.json())
       .then((data) => setMovie(data.Search || []))
       .catch((error) =>
@@ -14,7 +15,7 @@ export default function Search() {
       );
   }, [string]);
 
-  const IMAGE = "/download.png"
+  const IMAGE = "/download.png";
 
   return movies ? (
     movies.length === 0 ? (
@@ -36,13 +37,7 @@ export default function Search() {
             <Link to={`/Expand/${movie.imdbID}`} key={movie.imdbID}>
               <div className="hover-grow w-24 sm:w-32 md:w-48 pb-8 ">
                 <img
-                  src={
-                    movie.Poster !== "N/A" ? (
-                      movie.Poster
-                    ) : (
-                      IMAGE
-                    )
-                  }
+                  src={movie.Poster !== "N/A" ? movie.Poster : IMAGE}
                   alt={movie.Title}
                 />
                 <h2 className="text-center">{movie.Title}</h2>

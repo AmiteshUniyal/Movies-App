@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-
+import { API_URL } from "../constants";
 
 export default function Items() {
   const [movies1, setMovies1] = useState([]);
@@ -9,26 +8,21 @@ export default function Items() {
   const [movies3, setMovies3] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/war")
+    fetch(`${API_URL}/war`)
       .then((response) => response.json())
       .then((data) => setMovies1(data.Search || []))
-      .catch((error) =>
-        console.error(
-          "[http://localhost:5000/api/war] Error in data-fetching",
-          error
-        )
-      );
+      .catch((error) => console.error(error));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/all")
+    fetch(`${API_URL}/all`)
       .then((response) => response.json())
       .then((data) => setMovies2(data.Search || []))
       .catch((error) => console.error("Error in data-fetching", error));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/are")
+    fetch(`${API_URL}/are`)
       .then((response) => response.json())
       .then((data) => setMovies3(data.Search || []))
       .catch((error) => console.error("Error in data-fetching", error));
