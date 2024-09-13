@@ -100,13 +100,7 @@ export default function Items() {
           </div>
         </div>
         <div className="text-center pl-16 pr-16 pt-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt iusto
-          nulla odit laudantium quisquam similique sapiente provident. Cumque
-          aspernatur error, est dolore accusamus rem, voluptate exercitationem
-          tenetur cum corrupti, omnis et repellendus repudiandae dicta.
-          Repellendus alias placeat doloremque ipsam! Recusandae repudiandae non
-          officia, reiciendis asperiores totam deleniti libero labore, eum qui
-          et aliquid iure vero eos expedita veniam unde delectus!
+        Discover movies, get real-time details, and explore your favorite films like never before! With seamless API integration, Movies Ocean brings you a world of cinematic content at your fingertips. Search for any movie and access information including ratings, cast, release dates, and much more. Whether you're a casual viewer or a movie buff, our responsive design ensures a smooth and immersive experience across all devices.
         </div>
       </div>
     </>
